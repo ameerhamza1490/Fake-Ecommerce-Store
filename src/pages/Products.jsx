@@ -19,11 +19,11 @@ const Products = () => {
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
           Our Products
         </h2>
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-x-6 gap-y-10 ">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-x-6 gap-y-10 justify-center">
           {products.map((items) => (
             <div
               key={items.id}
-              className="border border-gray-200 rounded-2xl p-5 m-3 flex flex-col justify-between shadow-sm bg-white h-full transition-transform duration-300 hover:shadow-lg hover:translate-y-1 cursor-pointer"
+              className="border border-gray-200 rounded-2xl p-5 w-full max-w-sm flex flex-col justify-between shadow-sm bg-white h-full transition-transform duration-300 hover:shadow-lg hover:translate-y-1 cursor-pointer"
             >
               <img
                 src={items.image}
