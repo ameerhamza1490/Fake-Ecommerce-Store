@@ -15,20 +15,33 @@ const Products = () => {
   console.log(products);
   return (
     <>
-      <div>
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 ">
+      <div className="min-h-screen bg-gray-100 py-10 px-6">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
+          Our Products
+        </h2>
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-x-6 gap-y-10 ">
           {products.map((items) => (
             <div
               key={items.id}
-              className="rounded-2xl p-4 m-3 flex flex-col justify-between shadow-xl/30 bg-white h-full"
+              className="border border-gray-200 rounded-2xl p-5 m-3 flex flex-col justify-between shadow-sm bg-white h-full transition-transform duration-300 hover:shadow-lg hover:translate-y-1 cursor-pointer"
             >
+              <img
+                src={items.image}
+                alt=""
+                className="w-full h-56 object-contain mb-4"
+              />
               <div className="flex flex-col gap-4 flex-grow">
-                <h1 className="text-2xl font-bold">{items.title}</h1>
-                <img src={items.image} alt="" className="w-full h-60 object-contain" />
-                <p className="text-sm text-gray-600">{items.description}</p>
-                <div className="mt-auto pt-4 border-t">
-                  <p className="font-bold mb-2 text-lg"> Price: ${items.price}</p>
-                  <button className="bg-sky-500 text-white py-2 px-4 rounded-2xl hover:bg-sky-700 w-full cursor-pointer transition duration-300 ease-in-out font-bold">
+                <h1 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                  {items.title}
+                </h1>
+                <p className="text-sm text-gray-600 mb-4 line-clamp-3">
+                  {items.description}
+                </p>
+                <div className="mt-auto pt-4 border-t border-gray-200">
+                  <p className="font-bold mb-3 text-lg text-green-700">
+                    Price: ${items.price}
+                  </p>
+                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-xl transition duration-200 ease-in-out cursor-pointer">
                     Buy Now
                   </button>
                 </div>
