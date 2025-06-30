@@ -23,7 +23,7 @@ const Products = () => {
           {products.map((items) => (
             <div
               key={items.id}
-              className="border border-gray-200 rounded-2xl p-5 w-full max-w-sm flex flex-col justify-between shadow-sm bg-white h-full transition-transform duration-300 hover:shadow-lg hover:translate-y-1 cursor-pointer"
+              className="border border-gray-200 rounded-2xl p-5 w-full  flex flex-col justify-between shadow-sm bg-white h-full transition-transform duration-300 hover:shadow-lg hover:translate-y-1 cursor-pointer"
             >
               <img
                 src={items.image}
