@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Products = () => {
@@ -21,32 +22,34 @@ const Products = () => {
         </h2>
         <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-x-6 gap-y-10 justify-center">
           {products.map((items) => (
-            <div
-              key={items.id}
-              className="border border-gray-200 rounded-2xl p-5 w-full  flex flex-col justify-between shadow-sm bg-white h-full transition-transform duration-300 hover:shadow-lg hover:translate-y-1 cursor-pointer"
-            >
-              <img
-                src={items.image}
-                alt=""
-                className="w-full h-56 object-contain mb-4"
-              />
-              <div className="flex flex-col gap-4 flex-grow">
-                <h1 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
-                  {items.title}
-                </h1>
-                <p className="text-sm text-gray-600 mb-4 line-clamp-3">
-                  {items.description}
-                </p>
-                <div className="mt-auto pt-4 border-t border-gray-200">
-                  <p className="font-bold mb-3 text-lg text-green-700">
-                    Price: ${items.price}
+            <Link key={items.id} to={`productdetail/${items.id}`}>
+              <div
+                key={items.id}
+                className="border border-gray-200 rounded-2xl p-5 w-full  flex flex-col justify-between shadow-sm bg-white h-full transition-transform duration-300 hover:shadow-lg hover:translate-y-1 cursor-pointer"
+              >
+                <img
+                  src={items.image}
+                  alt=""
+                  className="w-full h-56 object-contain mb-4"
+                />
+                <div className="flex flex-col gap-4 flex-grow">
+                  <h1 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                    {items.title}
+                  </h1>
+                  <p className="text-sm text-gray-600 mb-4 line-clamp-3">
+                    {items.description}
                   </p>
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-xl transition duration-200 ease-in-out cursor-pointer">
-                    Buy Now
-                  </button>
+                  <div className="mt-auto pt-4 border-t border-gray-200">
+                    <p className="font-bold mb-3 text-lg text-green-700">
+                      Price: ${items.price}
+                    </p>
+                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-xl transition duration-200 ease-in-out cursor-pointer">
+                      Buy Now
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
